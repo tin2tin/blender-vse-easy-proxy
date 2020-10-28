@@ -155,7 +155,7 @@ class CreateProxy(bpy.types.Operator):
                 mov_path = Path(
                     os.path.normpath(bpy.path.abspath(activestrp.filepath)))
                 mov_name = Path(bpy.path.basename(activestrp.filepath))
-                cmd = '%s -i "%s" -vf scale=640:-2 -vcodec libx264 -g 1 -bf 0 -vb 0 -crf %d -preset veryfast -tune fastdecode -acodec aac -ab 128k "%s/%s/%s" -y' % (
+                cmd = '%s -i "%s" -vf scale=640:-2 -vcodec libx264 -g 1 -bf 0 -vb 0 -crf %d -preset veryfast -acodec aac -ab 128k "%s/%s/%s" -y' % (
                     chr(34)+ffmpegfilepath+chr(34), mov_path, mytool.crf, proxyfilepath,
                     mov_name, ext)
                 cmdpath = Path(cmd)
@@ -234,7 +234,7 @@ class CreateAllProxy(bpy.types.Operator):
                 mov_path = Path(
                     os.path.normpath(bpy.path.abspath(activestrp.filepath)))
                 mov_name = Path(bpy.path.basename(activestrp.filepath))
-                cmd = '%s -i "%s" -vf scale=640:-2 -vcodec libx264 -g 1 -bf 0 -vb 0 -crf %d -preset veryfast -tune fastdecode -acodec aac -ab 128k "%s/%s/%s" -y' % (
+                cmd = '%s -i "%s" -vf scale=640:-2 -vcodec libx264 -g 1 -bf 0 -vb 0 -crf %d -preset veryfast -acodec aac -ab 128k "%s/%s/%s" -y' % (
                     chr(34)+ffmpegfilepath+chr(34), mov_path, mytool.crf, proxyfilepath,
                     mov_name, ext)
                 cmdpath = Path(cmd)
@@ -357,7 +357,7 @@ class EasyProxyFilebrowser(bpy.types.Operator, ImportHelper):
 
             mov_path = Path(os.path.normpath(bpy.path.abspath(activestrp)))
             mov_name = Path(bpy.path.basename(activestrp))
-            cmd = '%s -i "%s" -vf scale=640:-2 -vcodec libx264 -g 1 -bf 0 -vb 0 -crf %d -preset veryfast -tune fastdecode -acodec aac -ab 128k "%s/%s/%s" -y' % (
+            cmd = '%s -i "%s" -vf scale=640:-2 -vcodec libx264 -g 1 -bf 0 -vb 0 -crf %d -preset veryfast -acodec aac -ab 128k "%s/%s/%s" -y' % (
                 chr(34)+ffmpegfilepath+chr(34), mov_path, mytool.crf, proxyfilepath, mov_name,
                 ext)
 
